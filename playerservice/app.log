@@ -934,3 +934,55 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2024-01-16 22:35:41.055  INFO 5512 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
 2024-01-16 22:40:06.700  INFO 5512 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2024-01-16 22:45:06.707  INFO 5512 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-01-16 22:50:06.722  INFO 5512 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-01-16 22:55:06.736  INFO 5512 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-01-16 23:00:06.745  INFO 5512 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-01-16 23:05:06.752  INFO 5512 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-01-16 23:10:06.761  INFO 5512 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-01-16 23:12:37.326  INFO 5512 --- [Thread-8] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5495333e: startup date [Tue Jan 16 22:34:57 CET 2024]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@6ae5aa72
+2024-01-16 23:12:37.328  INFO 5512 --- [Thread-8] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application PlayerService with eureka with status DOWN
+2024-01-16 23:12:37.328  WARN 5512 --- [Thread-8] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1705443157328, current=DOWN, previous=UP]
+2024-01-16 23:12:37.332  WARN 5512 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1705443157332, current=UP, previous=DOWN]
+2024-01-16 23:12:37.332  INFO 5512 --- [Thread-8] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2024-01-16 23:12:37.333  INFO 5512 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PLAYERSERVICE/pc-thib:PlayerService:8888: registering service...
+2024-01-16 23:12:37.334  INFO 5512 --- [Thread-8] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2024-01-16 23:12:37.337  INFO 5512 --- [Thread-8] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2024-01-16 23:12:37.339  INFO 5512 --- [Thread-8] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2024-01-16 23:12:37.349  INFO 5512 --- [Thread-8] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2024-01-16 23:12:37.353  INFO 5512 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_PLAYERSERVICE/pc-thib:PlayerService:8888 - registration status: 204
+2024-01-16 23:12:37.354  WARN 5512 --- [Thread-8] .s.c.a.CommonAnnotationBeanPostProcessor : Invocation of destroy method failed on bean with name 'scopedTarget.eurekaClient': org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaInstanceConfigBean': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2024-01-16 23:12:37.355  WARN 5512 --- [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaInstanceConfigBean': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:208) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1135) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:818) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolvePreparedArguments(ConstructorResolver.java:767) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1247) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1096) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:353) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:390) ~[spring-cloud-context-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:184) ~[spring-cloud-context-2.0.1.RELEASE.jar:2.0.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:350) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35) ~[spring-aop-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:672) ~[spring-aop-5.0.9.RELEASE.jar:5.0.9.RELEASE]
+	at com.netflix.appinfo.ApplicationInfoManager$$EnhancerBySpringCGLIB$$bc91517d.refreshDataCenterInfoIfRequired(<generated>) ~[eureka-client-1.9.3.jar:1.9.3]
+	at com.netflix.discovery.DiscoveryClient.refreshInstanceInfo(DiscoveryClient.java:1377) ~[eureka-client-1.9.3.jar:1.9.3]
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:117) ~[eureka-client-1.9.3.jar:1.9.3]
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) [eureka-client-1.9.3.jar:1.9.3]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_392-392]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_392-392]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_392-392]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_392-392]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_392-392]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_392-392]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_392-392]
+

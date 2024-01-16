@@ -15,19 +15,24 @@ public class StatsService {
     @Autowired
     RestTemplate restTemplate;
 
-//    @HystrixCommand(fallbackMethod = "callStatsServiceFallBack")
+    @HystrixCommand(fallbackMethod = "callStatsServiceFallBack", commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000")
+    })
     public Object getTeamStats(int id) {
-        return this.restTemplate.exchange("http://127.0.0.1:8080/teams/{id}",
+        return this.restTemplate.exchange("http://TeamService:8080/teams/{id}",
                 HttpMethod.GET, null, new ParameterizedTypeReference<String>() {
                 }, id).getBody();
     }
 
-//    @HystrixCommand(fallbackMethod = "callStatsServiceFallBack")
+    @HystrixCommand(fallbackMethod = "callStatsServiceFallBack", commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000")
+    })
     public Object getPlayerStats(int id) {
-        return this.restTemplate.exchange("http://127.0.0.1:8888/players/{id}",
+        return this.restTemplate.exchange("http://PlayerService:8888/players/{id}",
                 HttpMethod.GET, null, new ParameterizedTypeReference<String>() {
                 }, id).getBody();
     }
+
 
     private String callStatsServiceFallBack(int id) {
         System.out.println("Student Service is down!!! fallback route enabled...");
