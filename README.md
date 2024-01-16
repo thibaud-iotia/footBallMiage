@@ -11,7 +11,7 @@ Il s'agit d'un projet contenant 5 micro services sur le thème du football:
 
 Les micro services ont tous, à l'exception d'Euraka, une documentation Swagger afin de tester les différents services. 
 
-Le projet utilise Spring Boot avec Java. Différentes technologies ont été utilisé comme Eureka, Hystrix (pour le circuit breaker), ou encore Actuator pour le monitoring des micro services. 
+Le projet utilise Spring Boot avec Java. Différentes technologies ont été utilisé comme Eureka, Hystrix (pour le circuit breaker), Actuator pour le monitoring des micro services ou encore Ribbon pour le Load balancing. 
 
 ## Les End-points : 
 **Service d'équipe :**
