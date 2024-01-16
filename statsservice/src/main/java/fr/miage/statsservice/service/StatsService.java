@@ -15,14 +15,14 @@ public class StatsService {
     @Autowired
     RestTemplate restTemplate;
 
-    @HystrixCommand(fallbackMethod = "callStatsServiceFallBack", commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMillisecond", value = "1000")})
+//    @HystrixCommand(fallbackMethod = "callStatsServiceFallBack")
     public Object getTeamStats(int id) {
         return this.restTemplate.exchange("http://127.0.0.1:8080/teams/{id}",
                 HttpMethod.GET, null, new ParameterizedTypeReference<String>() {
                 }, id).getBody();
     }
 
-    @HystrixCommand(fallbackMethod = "callStatsServiceFallBack", commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMillisecond", value = "1000")})
+//    @HystrixCommand(fallbackMethod = "callStatsServiceFallBack")
     public Object getPlayerStats(int id) {
         return this.restTemplate.exchange("http://127.0.0.1:8888/players/{id}",
                 HttpMethod.GET, null, new ParameterizedTypeReference<String>() {
